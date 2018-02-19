@@ -1,0 +1,40 @@
+{
+  "name": "react-bs-grid",
+  "version": "0.0.1",
+  "description": "Twitter Bootsrap Grid system for React",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start-js": "cross-env PORT=4100 react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build",
+    "test": "cross-env PORT=4100 react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9001 -c .storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nansou13/react-bs-grid.git"
+  },
+  "author": "Nans",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nansou13/react-bs-grid/issues"
+  },
+  "homepage": "https://github.com/nansou13/react-bs-grid#readme",
+  "dependencies": {
+    "npm-run-all": "^4.1.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "^1.1.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-info": "^3.3.13",
+    "@storybook/addon-knobs": "^3.3.13",
+    "@storybook/react": "^3.3.13",
+    "babel-core": "^6.26.0",
+    "cross-env": "^5.1.3",
+    "node-sass-chokidar": "0.0.3"
+  }
+}
