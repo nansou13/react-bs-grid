@@ -7,8 +7,7 @@ function loadStories() {
   require('../stories');
 
   require('../stories/container/container');
-
-
+  require('../stories/grid/grid');
 }
 
 configure(loadStories, module);
