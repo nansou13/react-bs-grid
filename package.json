@@ -1,6 +1,6 @@
 {
-  "name": "@nans/react-bs-grid",
-  "version": "1.0.0",
+  "name": "@nans13/react-bs-grid",
+  "version": "1.0.1",
   "description": "Twitter Bootsrap Grid system for React",
   "main": "dist/index.js",
   "scripts": {
@@ -22,7 +22,6 @@
   "homepage": "https://github.com/nansou13/react-bs-grid#readme",
   "dependencies": {
     "classnames": "^2.2.5",
-    "npm-run-all": "^4.1.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
