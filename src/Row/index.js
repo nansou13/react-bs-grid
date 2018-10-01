@@ -8,7 +8,11 @@ const Row = ({ children, className }) => (
 
 Row.propTypes = {
   children: PropTypes.node,
-  className: PropTypes.node,
+  className: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+    PropTypes.node,
+  ]),
 }
 
 export default Row

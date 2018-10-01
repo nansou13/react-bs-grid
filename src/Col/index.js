@@ -32,7 +32,11 @@ const Col = ({ children, className, ...props }) => {
 
 Col.propTypes = {
   children: PropTypes.node,
-  className: PropTypes.node,
+  className: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+    PropTypes.node,
+  ]),
   xs: PropTypes.number,
   sm: PropTypes.number,
   md: PropTypes.number,

@@ -18,7 +18,11 @@ const Container = ({ children, className, fluid }) => (
 
 Container.propTypes = {
   children: PropTypes.node,
-  className: PropTypes.node,
+  className: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+    PropTypes.node,
+  ]),
   fluid: PropTypes.bool,
 }
 
