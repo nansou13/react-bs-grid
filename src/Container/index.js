@@ -1,29 +1,45 @@
 import React from 'react'
-import ClassNames from 'classnames'
 import PropTypes from 'prop-types'
 
-const Container = ({ children, className, fluid }) => (
-  <div
-    className={ClassNames(
-      {
-        'container-fluid': fluid,
-        container: !fluid,
-      },
-      className
-    )}
-  >
-    {children}
-  </div>
+import SCContainer from './style'
+
+import {
+  containerType,
+  directionType,
+  justifyType,
+  alignContentType,
+  alignItemType,
+  wrapType,
+  defaultValue,
+} from './proptypes'
+
+const Container = ({ children, ...props }) => (
+  <SCContainer {...props}>{children}</SCContainer>
 )
 
 Container.propTypes = {
   children: PropTypes.node,
-  className: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object,
-    PropTypes.node,
-  ]),
-  fluid: PropTypes.bool,
+  direction: directionType,
+  justify: justifyType,
+  wrap: wrapType,
+  alignContent: alignContentType,
+  alignItem: alignItemType,
+  hidden: PropTypes.bool,
+  xs: containerType,
+  sm: containerType,
+  md: containerType,
+  lg: containerType,
+  xl: containerType,
+}
+
+Container.defaultProps = {
+  children: '',
+  xs: null,
+  sm: null,
+  md: null,
+  lg: null,
+  xl: null,
+  ...defaultValue,
 }
 
 export default Container

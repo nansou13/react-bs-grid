@@ -1,20 +1,22 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-const SCCol = styled.div`
-  order: ${({ order }) => order};
-  align-self: ${({ alignSelf }) => alignSelf};
-  flex: ${({ flex }) => flex};
-  display: ${({ hidden }) => hidden && 'none'};
+const SCContainer = styled.div`
+  display: ${({ hidden }) => (hidden ? 'none' : 'flex')};
+  flex-direction: ${props => props.direction};
+  justify-content: ${props => props.justify};
+  align-items: ${props => props.alignItem};
+  align-content: ${props => props.alignContent};
+  flex-wrap: ${props => props.wrap};
 
   ${props =>
     props.xs &&
     css`
       @media (max-width: 575px) {
-        order: ${({ xs }) => xs.order};
-        align-self: ${({ xs }) => xs.alignSelf};
-        flex: ${({ xs }) => xs.flex};
+        flex-direction: ${({ xs }) => xs.direction};
+        justify-content: ${({ xs }) => xs.justify};
+        align-items: ${({ xs }) => xs.alignItem};
+        align-content: ${({ xs }) => xs.alignContent};
+        flex-wrap: ${({ xs }) => xs.wrap};
         display: ${({ xs }) => xs.hidden && 'none'};
       }
     `};
@@ -28,6 +30,7 @@ const SCCol = styled.div`
         align-items: ${({ sm }) => sm.alignItem};
         align-content: ${({ sm }) => sm.alignContent};
         flex-wrap: ${({ sm }) => sm.wrap};
+        display: ${({ sm }) => sm.hidden && 'none'};
       }
     `};
 
@@ -40,6 +43,7 @@ const SCCol = styled.div`
         align-items: ${({ md }) => md.alignItem};
         align-content: ${({ md }) => md.alignContent};
         flex-wrap: ${({ md }) => md.wrap};
+        display: ${({ md }) => md.hidden && 'none'};
       }
     `};
 
@@ -52,6 +56,7 @@ const SCCol = styled.div`
         align-items: ${({ lg }) => lg.alignItem};
         align-content: ${({ lg }) => lg.alignContent};
         flex-wrap: ${({ lg }) => lg.wrap};
+        display: ${({ lg }) => lg.hidden && 'none'};
       }
     `};
 
@@ -64,43 +69,8 @@ const SCCol = styled.div`
         align-items: ${({ xl }) => xl.alignItem};
         align-content: ${({ xl }) => xl.alignContent};
         flex-wrap: ${({ xl }) => xl.wrap};
+        display: ${({ xl }) => xl.hidden && 'none'};
       }
     `};
 `
-
-const Col = ({ children, ...props }) => <SCCol {...props}>{children}</SCCol>
-
-const colType = PropTypes.shape({
-  order: PropTypes.number,
-  alignSelf: PropTypes.oneOf(['flex-start', 'flex-end', 'stretch', 'center']),
-  flex: PropTypes.number,
-  hidden: PropTypes.bool,
-})
-
-Col.propTypes = {
-
-  order: PropTypes.number,
-  alignSelf: PropTypes.oneOf(['flex-start', 'flex-end', 'stretch', 'center']),
-  flex: PropTypes.number,
-  hidden: PropTypes.bool,
-  xs: colType,
-  sm: colType,
-  md: colType,
-  lg: colType,
-  xl: colType,
-}
-
-Col.defaultProps = {
-  order: null,
-  alignSelf: null,
-  flex: null,
-  hidden: false,
-  xs: null,
-  sm: null,
-  md: null,
-  lg: null,
-  xl: null,
-
-}
-
-export default Col
+export default SCContainer

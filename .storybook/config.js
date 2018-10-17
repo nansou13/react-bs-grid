@@ -7,7 +7,12 @@ function loadStories() {
   require('../stories');
 
   require('../stories/container/container');
-  require('../stories/grid/grid');
+  require('../stories/container/direction');
+  require('../stories/container/justify');
+  require('../stories/container/align');
+  require('../stories/container/wrap');
+  require('../stories/container/alignContent');
+  // require('../stories/grid/grid');
 }
 
 configure(loadStories, module);
