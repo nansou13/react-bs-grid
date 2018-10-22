@@ -1,10 +1,10 @@
 {
   "name": "@nans13/react-bs-grid",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "Twitter Bootsrap Grid system for React",
   "main": "dist/index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode production",
     "test": "jest",
     "test:watch": "npm test -- --watch",
     "eject": "react-scripts eject",
@@ -14,6 +14,12 @@
     "type": "git",
     "url": "git+https://github.com/nansou13/react-bs-grid.git"
   },
+  "keywords": [
+    "react-component",
+    "react",
+    "flex",
+    "container"
+  ],
   "author": "Nans <nans@gigan.fr>",
   "license": "MIT",
   "bugs": {
@@ -61,6 +67,7 @@
     "jest": "^22.4.0",
     "prettier": "^1.8.2",
     "react-scripts": "^1.1.1",
-    "webpack": "^3.11.0"
+    "webpack": "^4.21.0",
+    "webpack-cli": "^3.1.2"
   }
 }
