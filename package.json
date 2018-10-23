@@ -1,6 +1,6 @@
 {
   "name": "@nans13/react-bs-grid",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Twitter Bootsrap Grid system for React",
   "main": "dist/index.js",
   "scripts": {
